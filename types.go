@@ -5,7 +5,7 @@ import (
 )
 
 type OrderRating struct {
-	requestedCategory string `json:"requestedCategory"` // mandatory
+	RequestedCategory string `json:"requestedCategory"` // mandatory
 }
 
 type RequestSupplier struct {
@@ -13,7 +13,7 @@ type RequestSupplier struct {
 	CompanyName string   `json:"companyName"` // mandatory
 	Language    string   `json:"language"`    // mandatory
 	Email       string   `json:"email"`       // mandatory
-	Scope       []string `json:"websites"`    // mandatory
+	Websites    []string `json:"websites"`    // mandatory
 
 	Forename string `json:"forename,omitempty"` // optional
 	Surname  string `json:"surname,omitempty"`  // optional
@@ -34,7 +34,7 @@ type Supplier struct {
 	CompanyName string   `json:"companyName"`
 	Language    string   `json:"language"`
 	Email       string   `json:"email"`
-	Scope       []string `json:"websites"`
+	Websites    []string `json:"websites"`
 
 	Forename string `json:"forename,omitempty"`
 	Surname  string `json:"surname,omitempty"`
