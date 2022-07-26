@@ -62,15 +62,15 @@ type UnassignSupplier struct {
 }
 
 type Rating struct {
-	SupplierID      string       `json:"supplierID"`
-	ExternalID      string       `json:"externalID,omitempty"`
-	AScore          int          `json:"aScore,omitempty"`
-	BScore          int          `json:"bScore,omitempty"`
-	CScore          int          `json:"cScore,omitempty"`
-	Status          RatingStatus `json:"status,omitempty"`
-	ValidFrom       *time.Time   `json:"validFrom,omitempty"`
-	ValidUntil      *time.Time   `json:"validUntil,omitempty"`
-	CyberTrustLabel string       `json:"cyberTrustLabel,omitempty"`
+	SupplierID      string     `json:"supplierID"`
+	ExternalID      string     `json:"externalID,omitempty"`
+	AScore          int        `json:"aScore,omitempty"`
+	BScore          int        `json:"bScore,omitempty"`
+	CScore          int        `json:"cScore,omitempty"`
+	Status          string     `json:"status,omitempty"`
+	ValidFrom       *time.Time `json:"validFrom,omitempty"`
+	ValidUntil      *time.Time `json:"validUntil,omitempty"`
+	CyberTrustLabel string     `json:"cyberTrustLabel,omitempty"`
 }
 
 type RatingFilter struct {
