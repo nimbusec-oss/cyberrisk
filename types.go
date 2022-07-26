@@ -52,6 +52,15 @@ type Supplier struct {
 	Rating *Rating `json:"rating,omitempty"`
 }
 
+type SupplierFilter struct {
+	IncludeRatings bool `json:"include-ratings"`
+}
+
+type UnassignSupplier struct {
+	SupplierIDs []string `json:"supplier-id"`
+	ExternalIDs []string `json:"external-id"`
+}
+
 type Rating struct {
 	SupplierID      string     `json:"supplierID"`
 	ExternalID      string     `json:"externalID,omitempty"`
@@ -62,6 +71,12 @@ type Rating struct {
 	ValidFrom       *time.Time `json:"validFrom,omitempty"`
 	ValidUntil      *time.Time `json:"validUntil,omitempty"`
 	CyberTrustLabel string     `json:"cyberTrustLabel,omitempty"`
+}
+
+type RatingFilter struct {
+	Status      []string `json:"status"`
+	SupplierIDs []string `json:"supplier-id"`
+	ExternalIDs []string `json:"external-id"`
 }
 
 type RequestRating struct {

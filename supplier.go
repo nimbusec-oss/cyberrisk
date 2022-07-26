@@ -2,13 +2,25 @@ package cyberrisk
 
 import (
 	"net/http"
+	"net/url"
+
+	"github.com/google/go-querystring/query"
 )
 
 type SupplierService service
 
-func (srv SupplierService) List() ([]Supplier, error) {
+func (srv SupplierService) List(filter *SupplierFilter) ([]Supplier, error) {
+	v, err := query.Values(filter)
+	if err != nil {
+		return nil, err
+	}
+	u := url.URL{
+		Path:     "/api/v1/suppliers",
+		RawQuery: v.Encode(),
+	}
+
 	resp := []Supplier{}
-	err := srv.client.Do(http.MethodGet, "/api/v1/suppliers", nil, &resp)
+	err = srv.client.Do(http.MethodGet, u.String(), nil, &resp)
 	return resp, err
 }
 
@@ -18,13 +30,15 @@ func (srv SupplierService) Create(create []RequestSupplier) ([]Supplier, error) 
 	return resp, err
 }
 
-func (srv SupplierService) Delete(id string) error { // supplierID or externalID
-	err := srv.client.Do(http.MethodDelete, "/api/v1/suppliers/"+id, nil, nil)
-	return err
-}
+func (srv SupplierService) Unassign(unassign UnassignSupplier) error {
+	v, err := query.Values(unassign)
+	if err != nil {
+		return err
+	}
+	u := url.URL{
+		Path:     "/api/v1/suppliers/unassign",
+		RawQuery: v.Encode(),
+	}
 
-func (srv SupplierService) GetRating(id string) (Rating, error) { // supplierID or externalID
-	resp := Rating{}
-	err := srv.client.Do(http.MethodGet, "/api/v1/suppliers/"+id+"/rating", nil, &resp)
-	return resp, err
+	return srv.client.Do(http.MethodDelete, u.String(), nil, nil)
 }
