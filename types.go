@@ -53,12 +53,12 @@ type Supplier struct {
 }
 
 type SupplierFilter struct {
-	IncludeRatings bool `json:"include-ratings"`
+	IncludeRatings bool `url:"include-ratings"`
 }
 
 type UnassignSupplier struct {
-	SupplierIDs []string `json:"supplier-id"`
-	ExternalIDs []string `json:"external-id"`
+	SupplierIDs []string `url:"supplier-id"`
+	ExternalIDs []string `url:"external-id"`
 }
 
 type Rating struct {
@@ -74,9 +74,9 @@ type Rating struct {
 }
 
 type RatingFilter struct {
-	Status      []string `json:"status"`
-	SupplierIDs []string `json:"supplier-id"`
-	ExternalIDs []string `json:"external-id"`
+	Status      []string `url:"status"`
+	SupplierIDs []string `url:"supplier-id"`
+	ExternalIDs []string `url:"external-id"`
 }
 
 type RequestRating struct {
