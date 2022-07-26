@@ -1,16 +1,16 @@
 package cyberrisk
 
-type AssessmentStatus string
+type RatingStatus string
 
 const (
-	StatusAssessmentInProgress    AssessmentStatus = "in-progress"
-	StatusAssessmentValidation    AssessmentStatus = "validation"
-	StatusAssessmentJustification AssessmentStatus = "justification"
-	StatusAssessmentRevalidation  AssessmentStatus = "revalidation"
-	StatusAssessmentFinalization  AssessmentStatus = "finalization"
-	StatusAssessmentDone          AssessmentStatus = "done"
+	StatusRatingInProgress    RatingStatus = "in-progress"
+	StatusRatingValidation    RatingStatus = "validation"
+	StatusRatingJustification RatingStatus = "justification"
+	StatusRatingRevalidation  RatingStatus = "revalidation"
+	StatusRatingFinalization  RatingStatus = "finalization"
+	StatusRatingDone          RatingStatus = "done"
 
-	StatusAssessmentDeclined AssessmentStatus = "declined"
-	StatusAssessmentBlocked  AssessmentStatus = "blocked"
-	StatusAssessmentExpired  AssessmentStatus = "expired"
+	StatusRatingDeclined RatingStatus = "declined"
+	StatusRatingBlocked  RatingStatus = "blocked"
+	StatusRatingExpired  RatingStatus = "expired"
 )
