@@ -92,9 +92,9 @@ type ContingentUsage struct {
 }
 
 type PostSuppliersReturn struct {
-	Created int              `json:"Created"`
-	Existed int              `json:"Existed"`
-	Orders  *ContingentUsage `json:"orders"`
+	Created int              `json:"created"`
+	Existed int              `json:"existed"`
+	Orders  *ContingentUsage `json:"orders,omitempty"`
 }
 
 type Account struct {
