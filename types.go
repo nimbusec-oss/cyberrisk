@@ -85,6 +85,18 @@ type RequestRating struct {
 	ExternalID string `json:"externalID,omitempty"`
 }
 
+type ContingentUsage struct {
+	ContingentBefore int      `json:"contingentBefore"`
+	ContingentAfter  int      `json:"contingentAfter"`
+	OrderedSuppliers []string `json:"orderedSuppliers"`
+}
+
+type PostSuppliersReturn struct {
+	Created int              `json:"Created"`
+	Existed int              `json:"Existed"`
+	Orders  *ContingentUsage `json:"orders"`
+}
+
 type Account struct {
 	Contingent int `json:"contingent,omitempty"`
 }
