@@ -63,6 +63,7 @@ type UnassignSupplier struct {
 
 type Rating struct {
 	SupplierID      string     `json:"supplierID"`
+	ExternalID      string     `json:"externalID,omitempty"` // Deprecated
 	ExternalIDs     []string   `json:"externalIDs,omitempty"`
 	AScore          int        `json:"aScore,omitempty"`
 	BScore          int        `json:"bScore,omitempty"`
