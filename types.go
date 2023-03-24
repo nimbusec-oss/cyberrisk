@@ -63,7 +63,7 @@ type UnassignSupplier struct {
 
 type Rating struct {
 	SupplierID      string     `json:"supplierID"`
-	ExternalID      string     `json:"externalID,omitempty"`
+	ExternalIDs     []string   `json:"externalIDs,omitempty"`
 	AScore          int        `json:"aScore,omitempty"`
 	BScore          int        `json:"bScore,omitempty"`
 	CScore          int        `json:"cScore,omitempty"`
