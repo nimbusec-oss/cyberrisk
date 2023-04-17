@@ -67,8 +67,9 @@ type Rating struct {
 	ExternalIDs     []string   `json:"externalIDs,omitempty"`
 	AScore          int        `json:"aScore,omitempty"`
 	BScore          int        `json:"bScore,omitempty"`
-	CScore          int        `json:"cScore,omitempty"`
 	Status          string     `json:"status,omitempty"`
+	CScore          int        `json:"cScore,omitempty"`
+	StatusCScore    string     `json:"statusCScore,omitempty"`
 	ValidFrom       *time.Time `json:"validFrom,omitempty"`
 	ValidUntil      *time.Time `json:"validUntil,omitempty"`
 	CyberTrustLabel string     `json:"cyberTrustLabel,omitempty"`

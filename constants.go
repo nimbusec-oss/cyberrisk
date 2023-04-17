@@ -11,3 +11,10 @@ const (
 	StatusRatingBlocked       = "blocked"
 	StatusRatingExpired       = "expired"
 )
+
+const (
+	StatusCScoreInProgress = "in-progress"
+	StatusCScoreDone       = "done"
+	StatusCScoreFailed     = "failed"
+	StatusCScoreMissing    = "missing"
+)
