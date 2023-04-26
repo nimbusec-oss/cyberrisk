@@ -62,17 +62,19 @@ type UnassignSupplier struct {
 }
 
 type Rating struct {
+	CompanyName     string     `json:"companyName,omitempty"`
 	SupplierID      string     `json:"supplierID"`
 	ExternalID      string     `json:"externalID,omitempty"` // Deprecated
 	ExternalIDs     []string   `json:"externalIDs,omitempty"`
 	AScore          int        `json:"aScore,omitempty"`
 	BScore          int        `json:"bScore,omitempty"`
 	Status          string     `json:"status,omitempty"`
-	CScore          int        `json:"cScore,omitempty"`
-	StatusCScore    string     `json:"statusCScore,omitempty"`
 	ValidFrom       *time.Time `json:"validFrom,omitempty"`
 	ValidUntil      *time.Time `json:"validUntil,omitempty"`
 	CyberTrustLabel string     `json:"cyberTrustLabel,omitempty"`
+	CScore          int        `json:"cScore,omitempty"`
+	StatusCScore    string     `json:"statusCScore,omitempty"`
+	Websites        []string   `json:"websites,omitempty"`
 }
 
 type RatingFilter struct {
