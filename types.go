@@ -19,12 +19,12 @@ type RequestSupplier struct {
 	Surname  string `json:"surname,omitempty"`  // optional
 	Tel      string `json:"tel,omitempty"`      // optional
 
-	Street     string `json:"street,omitempty"`     // optional
-	ZipCode    string `json:"zipCode,omitempty"`    // optional
-	City       string `json:"city,omitempty"`       // optional
-	Country    string `json:"country,omitempty"`    // optional
-	Sector     string `json:"sector,omitempty"`     // optional
-	ExternalID string `json:"externalID,omitempty"` // optional
+	Street      string   `json:"street,omitempty"`      // optional
+	ZipCode     string   `json:"zipCode,omitempty"`     // optional
+	City        string   `json:"city,omitempty"`        // optional
+	Country     string   `json:"country,omitempty"`     // optional
+	Sector      string   `json:"sector,omitempty"`      // optional
+	ExternalID  string   `json:"externalID,omitempty"`  // Deprecated
 	ExternalIDs []string `json:"externalIDs,omitempty"` // optional
 
 	OrderRating *OrderRating `json:"orderRating,omitempty"` // optional
