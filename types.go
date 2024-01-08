@@ -72,7 +72,7 @@ type Rating struct {
 	Status               string     `json:"status,omitempty"`
 	ValidFrom            *time.Time `json:"validFrom,omitempty"`
 	ValidUntil           *time.Time `json:"validUntil,omitempty"`
-	assessmentValidUntil *time.Time // internal only
+	AssessmentValidUntil *time.Time `json:"-"` // internal only
 	CyberTrustLabel      string     `json:"cyberTrustLabel,omitempty"`
 	CScore               int        `json:"cScore,omitempty"`
 	StatusCScore         string     `json:"statusCScore,omitempty"`
