@@ -18,3 +18,6 @@ const (
 	StatusCScoreFailed     = "failed"
 	StatusCScoreMissing    = "missing"
 )
+
+const TYPE_CRR ProjectType = "crr"
+const TYPE_DPR ProjectType = "dpr"

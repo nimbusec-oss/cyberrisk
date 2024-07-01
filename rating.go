@@ -15,7 +15,7 @@ func (srv RatingService) List(filter *RatingFilter) ([]Rating, error) {
 		return nil, err
 	}
 	u := url.URL{
-		Path:     "/api/v1/ratings",
+		Path:     "/api/v2/ratings",
 		RawQuery: v.Encode(),
 	}
 
@@ -24,8 +24,14 @@ func (srv RatingService) List(filter *RatingFilter) ([]Rating, error) {
 	return resp, err
 }
 
-func (srv RatingService) Create(create []RequestRating) ([]Rating, error) {
-	resp := []Rating{}
-	err := srv.client.Do(http.MethodPost, "/api/v1/ratings", create, &resp)
+func (srv RatingService) CreateCRR(create []RequestRatingCRR) (ContingentUsage, error) {
+	resp := ContingentUsage{}
+	err := srv.client.Do(http.MethodPost, "/api/v2/ratings/crr", create, &resp)
+	return resp, err
+}
+
+func (srv RatingService) CreateDPR(create []RequestRatingDPR) (ContingentUsage, error) {
+	resp := ContingentUsage{}
+	err := srv.client.Do(http.MethodPost, "/api/v2/ratings/dpr", create, &resp)
 	return resp, err
 }
