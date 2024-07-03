@@ -65,9 +65,9 @@ type Rating struct {
 	SupplierID  string   `json:"supplierID"`
 	ExternalIDs []string `json:"externalIDs,omitempty"`
 
-	RatingCRR RatingCRR `json:"ratingCRR,omitempty"`
-	RatingDPR RatingDPR `json:"ratingDPR,omitempty"`
-	WebRisk   WebRisk   `json:"webrisk,omitempty"`
+	RatingCRR *RatingCRR `json:"ratingCRR,omitempty"`
+	RatingDPR *RatingDPR `json:"ratingDPR,omitempty"`
+	WebRisk   *WebRisk   `json:"webrisk,omitempty"`
 }
 
 type RatingCRR struct {
