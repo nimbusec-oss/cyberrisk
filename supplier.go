@@ -24,8 +24,8 @@ type SupplierService service
 // 	return resp, err
 // }
 
-func (srv SupplierService) Create(create []RequestSupplier) (PostSuppliersReturn, error) {
-	resp := PostSuppliersReturn{}
+func (srv SupplierService) Create(create []RequestSupplier) (PostSuppliersResponse, error) {
+	resp := PostSuppliersResponse{}
 	err := srv.client.Do(http.MethodPost, "/api/v2/suppliers", create, &resp)
 	return resp, err
 }

@@ -119,7 +119,7 @@ type ContingentUsage struct {
 	OrderedSuppliers []string    `json:"orderedSuppliers"`
 }
 
-type PostSuppliersReturn struct {
+type PostSuppliersResponse struct {
 	Created   int              `json:"created"`
 	Existed   int              `json:"existed"`
 	OrdersCRR *ContingentUsage `json:"ordersCRR,omitempty"`
