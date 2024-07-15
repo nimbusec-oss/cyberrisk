@@ -5,6 +5,7 @@ import (
 )
 
 type ProjectType string
+type RatingType string
 
 type RequestSupplier struct {
 	VAT         string   `json:"vat"`         // mandatory
@@ -26,29 +27,6 @@ type RequestSupplier struct {
 
 	OrderCRR string `json:"orderCRR,omitempty"` // optional
 	OrderDPR bool   `json:"orderDPR,omitempty"` // optional
-}
-
-type Supplier struct {
-	VAT         string   `json:"vat"`
-	CompanyName string   `json:"companyName"`
-	Language    string   `json:"language"`
-	Email       string   `json:"email"`
-	Websites    []string `json:"websites"`
-
-	Forename string `json:"forename,omitempty"`
-	Surname  string `json:"surname,omitempty"`
-	Tel      string `json:"tel,omitempty"`
-
-	Street  string `json:"street,omitempty"`
-	ZipCode string `json:"zipCode,omitempty"`
-	City    string `json:"city,omitempty"`
-	Country string `json:"country,omitempty"`
-	Sector  string `json:"sector,omitempty"`
-
-	ExternalID string `json:"externalID,omitempty"`
-	ID         string `json:"id"`
-
-	Rating *Rating `json:"rating,omitempty"`
 }
 
 type SupplierFilter struct {
@@ -96,9 +74,10 @@ type WebRisk struct {
 }
 
 type RatingFilter struct {
-	Status      []string `url:"status"`
-	SupplierIDs []string `url:"supplier-id"`
-	ExternalIDs []string `url:"external-id"`
+	Status      []string     `url:"status"`
+	RatingType  []RatingType `url:"rt"`
+	SupplierIDs []string     `url:"supplier-id"`
+	ExternalIDs []string     `url:"external-id"`
 }
 
 type RequestRatingCRR struct {
