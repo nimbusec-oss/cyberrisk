@@ -9,7 +9,6 @@ const (
 	StatusRatingDone          = "done"
 	StatusRatingDeclined      = "declined"
 	StatusRatingBlocked       = "blocked"
-	StatusRatingExpired       = "expired"
 )
 
 const (
@@ -18,3 +17,10 @@ const (
 	StatusCScoreFailed     = "failed"
 	StatusCScoreMissing    = "missing"
 )
+
+const TYPE_CRR ProjectType = "crr"
+const TYPE_DPR ProjectType = "dpr"
+
+const SCORE_CRR ScoreType = "crr"
+const SCORE_DPR ScoreType = "dpr"
+const SCORE_WEBRISK ScoreType = "webrisk"

@@ -9,24 +9,9 @@ import (
 
 type SupplierService service
 
-func (srv SupplierService) List(filter *SupplierFilter) ([]Supplier, error) {
-	v, err := query.Values(filter)
-	if err != nil {
-		return nil, err
-	}
-	u := url.URL{
-		Path:     "/api/v1/suppliers",
-		RawQuery: v.Encode(),
-	}
-
-	resp := []Supplier{}
-	err = srv.client.Do(http.MethodGet, u.String(), nil, &resp)
-	return resp, err
-}
-
-func (srv SupplierService) Create(create []RequestSupplier) ([]Supplier, error) {
-	resp := []Supplier{}
-	err := srv.client.Do(http.MethodPost, "/api/v1/suppliers", create, &resp)
+func (srv SupplierService) Create(create []RequestSupplier) (PostSuppliersResponse, error) {
+	resp := PostSuppliersResponse{}
+	err := srv.client.Do(http.MethodPost, "/api/v2/suppliers", create, &resp)
 	return resp, err
 }
 
@@ -36,7 +21,7 @@ func (srv SupplierService) Unassign(unassign UnassignSupplier) error {
 		return err
 	}
 	u := url.URL{
-		Path:     "/api/v1/suppliers/unassign",
+		Path:     "/api/v2/suppliers/unassign",
 		RawQuery: v.Encode(),
 	}
 
