@@ -8,15 +8,15 @@ type ProjectType string
 type ScoreType string
 
 type RequestSupplier struct {
-	VAT         string   `json:"vat"`         // mandatory
-	CompanyName string   `json:"companyName"` // mandatory
-	Language    string   `json:"language"`    // mandatory
-	Email       string   `json:"email"`       // mandatory
-	Websites    []string `json:"websites"`    // mandatory
+	VAT         string `json:"vat"`         // mandatory
+	CompanyName string `json:"companyName"` // mandatory
+	Language    string `json:"language"`    // mandatory
+	Email       string `json:"email"`       // mandatory
 
-	Forename string `json:"forename,omitempty"` // optional
-	Surname  string `json:"surname,omitempty"`  // optional
-	Tel      string `json:"tel,omitempty"`      // optional
+	Websites []string `json:"websites,omitempty"` // optional
+	Forename string   `json:"forename,omitempty"` // optional
+	Surname  string   `json:"surname,omitempty"`  // optional
+	Tel      string   `json:"tel,omitempty"`      // optional
 
 	Street      string   `json:"street,omitempty"`      // optional
 	ZipCode     string   `json:"zipCode,omitempty"`     // optional
