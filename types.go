@@ -84,7 +84,6 @@ type Certification struct {
 	Validity      time.Time `json:"validity"`
 	ScopeDE       string    `json:"scopeDE"`
 	ScopeEN       string    `json:"scopeEN"`
-	HasAttachment bool      `json:"hasAttachment"`
 }
 
 type CertificationFilter struct {
