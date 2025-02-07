@@ -5,7 +5,6 @@ import (
 )
 
 type ProjectType string
-type ScoreType string
 
 type RequestSupplier struct {
 	VAT         string `json:"vat"`         // mandatory
@@ -73,11 +72,31 @@ type WebRisk struct {
 	Websites []string `json:"websites,omitempty"`
 }
 
+type SupplierCertifications struct {
+	SupplierID  string   `json:"supplierID"`
+	ExternalIDs []string `json:"externalIDs,omitempty"`
+
+	Certifications []Certification `json:"certifications,omitempty"`
+}
+
+type Certification struct {
+	Type          string    `json:"type"`
+	Validity      time.Time `json:"validity"`
+	ScopeDE       string    `json:"scopeDE"`
+	ScopeEN       string    `json:"scopeEN"`
+}
+
+type CertificationFilter struct {
+	SupplierIDs []string `url:"supplier-id"`
+	ExternalIDs []string `url:"external-id"`
+	Types       []string `url:"type"`
+}
+
 type RatingFilter struct {
-	Status      []string    `url:"status"`
-	ScoreType   []ScoreType `url:"st"`
-	SupplierIDs []string    `url:"supplier-id"`
-	ExternalIDs []string    `url:"external-id"`
+	Status      []string      `url:"status"`
+	ProjectType []ProjectType `url:"pt"`
+	SupplierIDs []string      `url:"supplier-id"`
+	ExternalIDs []string      `url:"external-id"`
 }
 
 type RequestRatingCRR struct {
