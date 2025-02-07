@@ -72,6 +72,27 @@ type WebRisk struct {
 	Websites []string `json:"websites,omitempty"`
 }
 
+type SupplierCertifications struct {
+	SupplierID  string   `json:"supplierID"`
+	ExternalIDs []string `json:"externalIDs,omitempty"`
+
+	Certifications []Certification `json:"certifications,omitempty"`
+}
+
+type Certification struct {
+	Type          string    `json:"type"`
+	Validity      time.Time `json:"validity"`
+	ScopeDE       string    `json:"scopeDE"`
+	ScopeEN       string    `json:"scopeEN"`
+	HasAttachment bool      `json:"hasAttachment"`
+}
+
+type CertificationFilter struct {
+	SupplierIDs []string `url:"supplier-id"`
+	ExternalIDs []string `url:"external-id"`
+	Types       []string `url:"type"`
+}
+
 type RatingFilter struct {
 	Status      []string      `url:"status"`
 	ProjectType []ProjectType `url:"pt"`

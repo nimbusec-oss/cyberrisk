@@ -18,10 +18,11 @@ type Client struct {
 	base string
 	dry  bool
 
-	common    service // Reuse a single struct instead of allocating one for each service on the heap.
-	Suppliers *SupplierService
-	Ratings   *RatingService
-	Account   *AccountService
+	common        service // Reuse a single struct instead of allocating one for each service on the heap.
+	Suppliers     *SupplierService
+	Ratings       *RatingService
+	Account       *AccountService
+	Certification *CertificationService
 }
 
 type Error struct {
@@ -62,6 +63,7 @@ func NewClient(config ClientConfig) *Client {
 	c.Suppliers = (*SupplierService)(&c.common)
 	c.Ratings = (*RatingService)(&c.common)
 	c.Account = (*AccountService)(&c.common)
+	c.Certification = (*CertificationService)(&c.common)
 
 	return c
 }
