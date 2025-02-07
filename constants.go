@@ -9,6 +9,7 @@ const (
 	StatusRatingDone          = "done"
 	StatusRatingDeclined      = "declined"
 	StatusRatingBlocked       = "blocked"
+	StatusRatingExpired       = "expired"
 )
 
 const (
