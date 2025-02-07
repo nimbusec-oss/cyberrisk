@@ -5,7 +5,6 @@ import (
 )
 
 type ProjectType string
-type ScoreType string
 
 type RequestSupplier struct {
 	VAT         string `json:"vat"`         // mandatory
@@ -74,10 +73,10 @@ type WebRisk struct {
 }
 
 type RatingFilter struct {
-	Status      []string    `url:"status"`
-	ScoreType   []ScoreType `url:"st"`
-	SupplierIDs []string    `url:"supplier-id"`
-	ExternalIDs []string    `url:"external-id"`
+	Status      []string      `url:"status"`
+	ProjectType []ProjectType `url:"pt"`
+	SupplierIDs []string      `url:"supplier-id"`
+	ExternalIDs []string      `url:"external-id"`
 }
 
 type RequestRatingCRR struct {

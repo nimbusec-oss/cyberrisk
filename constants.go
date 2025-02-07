@@ -20,7 +20,4 @@ const (
 
 const TYPE_CRR ProjectType = "crr"
 const TYPE_DPR ProjectType = "dpr"
-
-const SCORE_CRR ScoreType = "crr"
-const SCORE_DPR ScoreType = "dpr"
-const SCORE_WEBRISK ScoreType = "webrisk"
+const TYPE_WEBRISK ProjectType = "webrisk"
