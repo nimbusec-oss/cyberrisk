@@ -5,6 +5,7 @@ import (
 )
 
 type ProjectType string
+type ProvidedBy string
 
 type RequestSupplier struct {
 	VAT         string `json:"vat"`         // mandatory
@@ -55,6 +56,7 @@ type RatingCRR struct {
 	ValidUntil           *time.Time `json:"validUntil,omitempty"`
 	AssessmentValidUntil *time.Time `json:"assessmentValidUntil,omitempty"`
 	CyberTrustLabel      string     `json:"cyberTrustLabel,omitempty"`
+	ProvidedBy           ProvidedBy `json:"providedBy,omitempty"`
 }
 
 type RatingDPR struct {
@@ -64,6 +66,7 @@ type RatingDPR struct {
 	ValidFrom              *time.Time `json:"validFrom,omitempty"`
 	ValidUntil             *time.Time `json:"validUntil,omitempty"`
 	AssessmentValidUntil   *time.Time `json:"assessmentValidUntil,omitempty"`
+	ProvidedBy             ProvidedBy `json:"providedBy,omitempty"`
 }
 
 type WebRisk struct {
@@ -80,10 +83,10 @@ type SupplierCertifications struct {
 }
 
 type Certification struct {
-	Type          string    `json:"type"`
-	Validity      time.Time `json:"validity"`
-	ScopeDE       string    `json:"scopeDE"`
-	ScopeEN       string    `json:"scopeEN"`
+	Type     string    `json:"type"`
+	Validity time.Time `json:"validity"`
+	ScopeDE  string    `json:"scopeDE"`
+	ScopeEN  string    `json:"scopeEN"`
 }
 
 type CertificationFilter struct {
@@ -115,6 +118,10 @@ type ContingentUsage struct {
 	ContingentBefore int         `json:"contingentBefore"`
 	ContingentAfter  int         `json:"contingentAfter"`
 	OrderedSuppliers []string    `json:"orderedSuppliers"`
+
+	GroupContingentBefore int      `json:"groupContingentBefore"`
+	GroupContingentAfter  int      `json:"groupContingentAfter"`
+	GroupOrderedSuppliers []string `json:"groupOrderedSuppliers"`
 }
 
 type PostSuppliersResponse struct {
