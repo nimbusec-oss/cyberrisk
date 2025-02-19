@@ -46,6 +46,7 @@ type Rating struct {
 	RatingCRR *RatingCRR `json:"ratingCRR,omitempty"`
 	RatingDPR *RatingDPR `json:"ratingDPR,omitempty"`
 	WebRisk   *WebRisk   `json:"webrisk,omitempty"`
+	Dora      *DORA      `json:"dora,omitempty"`
 }
 
 type RatingCRR struct {
@@ -70,9 +71,14 @@ type RatingDPR struct {
 }
 
 type WebRisk struct {
-	Score    int      `json:"score,omitempty"`
-	Status   string   `json:"status,omitempty"`
-	Websites []string `json:"websites,omitempty"`
+	Score     int        `json:"score,omitempty"`
+	Status    string     `json:"status,omitempty"`
+	ValidFrom *time.Time `json:"validFrom,omitempty"`
+	Websites  []string   `json:"websites,omitempty"`
+}
+
+type DORA struct {
+	Score int `json:"score"`
 }
 
 type SupplierCertifications struct {
