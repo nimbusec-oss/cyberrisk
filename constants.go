@@ -22,6 +22,7 @@ const (
 const TYPE_CRR ProjectType = "crr"
 const TYPE_DPR ProjectType = "dpr"
 const TYPE_WEBRISK ProjectType = "webrisk"
+const TYPE_DORA ProjectType = "dora"
 
 const PROVIDED_BY_GROUP ProvidedBy = "group"
 const PROVIDED_BY_SUPPLIER ProvidedBy = "supplier"
