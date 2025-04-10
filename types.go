@@ -38,6 +38,24 @@ type UnassignSupplier struct {
 	ExternalIDs []string `url:"external-id"`
 }
 
+type RatingTimeline struct {
+	SupplierID  string   `json:"supplierID"`
+	ExternalIDs []string `json:"externalIDs,omitempty"`
+
+	TimelineCRR *TimelineDetail `json:"timelineCRR,omitempty"`
+	TimelineDPR *TimelineDetail `json:"timelineDPR,omitempty"`
+}
+
+type TimelineDetail struct {
+	StatusLogs []StatusLog   `json:"statusLogs"`
+	Duration   time.Duration `json:"duration"`
+}
+
+type StatusLog struct {
+	Date   time.Time `json:"date"`
+	Status string    `json:"status"`
+}
+
 type Rating struct {
 	CompanyName string   `json:"companyName,omitempty"`
 	SupplierID  string   `json:"supplierID"`
@@ -103,6 +121,12 @@ type CertificationFilter struct {
 
 type RatingFilter struct {
 	Status      []string      `url:"status"`
+	ProjectType []ProjectType `url:"pt"`
+	SupplierIDs []string      `url:"supplier-id"`
+	ExternalIDs []string      `url:"external-id"`
+}
+
+type TimelineFilter struct {
 	ProjectType []ProjectType `url:"pt"`
 	SupplierIDs []string      `url:"supplier-id"`
 	ExternalIDs []string      `url:"external-id"`
