@@ -47,8 +47,8 @@ type RatingTimeline struct {
 }
 
 type TimelineDetail struct {
-	StatusLogs []StatusLog   `json:"statusLogs"`
-	Duration   time.Duration `json:"duration"`
+	StatusLogs []StatusLog `json:"statusLogs"`
+	Duration   int         `json:"duration"` // days
 }
 
 type StatusLog struct {
