@@ -99,6 +99,20 @@ type Dora struct {
 	Score int `json:"score"`
 }
 
+type Supplier struct {
+	SupplierID  string   `json:"supplierID"`
+	ExternalIDs []string `json:"externalIDs,omitempty"`
+
+	CompanyName      string       `json:"companyName,omitempty"`
+	Identifiers      []Identifier `json:"identifiers,omitempty"`
+	UltimateParentID *string      `json:"ultimateParentID,omitempty"`
+}
+
+type Identifier struct {
+	Type  string `json:"type"`
+	Value string `json:"value"`
+}
+
 type SupplierCertifications struct {
 	SupplierID  string   `json:"supplierID"`
 	ExternalIDs []string `json:"externalIDs,omitempty"`
