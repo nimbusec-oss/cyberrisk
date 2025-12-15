@@ -121,10 +121,11 @@ type SupplierCertifications struct {
 }
 
 type Certification struct {
-	Type     string    `json:"type"`
-	Validity time.Time `json:"validity"`
-	ScopeDE  string    `json:"scopeDE"`
-	ScopeEN  string    `json:"scopeEN"`
+	Type              string    `json:"type"`
+	Validity          time.Time `json:"validity"`
+	ScopeDE           string    `json:"scopeDE"`
+	ScopeEN           string    `json:"scopeEN"`
+	CertificationBody string    `json:"certificationBody"`
 }
 
 type CertificationFilter struct {
