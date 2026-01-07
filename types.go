@@ -9,6 +9,7 @@ type ProvidedBy string
 type IdentifierType string
 
 type RequestSupplier struct {
+	VAT         string       `json:"vat"`         // mandatory
 	Identifiers []Identifier `json:"identifier"`  // mandatory
 	CompanyName string       `json:"companyName"` // mandatory
 	Language    string       `json:"language"`    // mandatory
