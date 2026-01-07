@@ -6,12 +6,13 @@ import (
 
 type ProjectType string
 type ProvidedBy string
+type IdentifierType string
 
 type RequestSupplier struct {
-	VAT         string `json:"vat"`         // mandatory
-	CompanyName string `json:"companyName"` // mandatory
-	Language    string `json:"language"`    // mandatory
-	Email       string `json:"email"`       // mandatory
+	Identifiers []Identifier `json:"identifier"`  // mandatory
+	CompanyName string       `json:"companyName"` // mandatory
+	Language    string       `json:"language"`    // mandatory
+	Email       string       `json:"email"`       // mandatory
 
 	Websites []string `json:"websites,omitempty"` // optional
 	Forename string   `json:"forename,omitempty"` // optional
@@ -109,8 +110,8 @@ type Supplier struct {
 }
 
 type Identifier struct {
-	Type  string `json:"type"`
-	Value string `json:"value"`
+	Type  IdentifierType `json:"type"`
+	Value string         `json:"value"`
 }
 
 type SupplierCertifications struct {
