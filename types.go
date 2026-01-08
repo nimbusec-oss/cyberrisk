@@ -10,10 +10,10 @@ type IdentifierType string
 
 type RequestSupplier struct {
 	VAT         string       `json:"vat"`         // mandatory
-	Identifiers []Identifier `json:"identifier"`  // mandatory
 	CompanyName string       `json:"companyName"` // mandatory
 	Language    string       `json:"language"`    // mandatory
 	Email       string       `json:"email"`       // mandatory
+	Identifiers []Identifier `json:"identifiers"` // optional
 
 	Websites []string `json:"websites,omitempty"` // optional
 	Forename string   `json:"forename,omitempty"` // optional
