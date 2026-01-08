@@ -26,3 +26,11 @@ const TYPE_DORA ProjectType = "dora"
 
 const PROVIDED_BY_GROUP ProvidedBy = "group"
 const PROVIDED_BY_SUPPLIER ProvidedBy = "supplier"
+
+const IDENTIFIER_TYPE_LEI IdentifierType = "LEI"
+const IDENTIFIER_TYPE_EUID IdentifierType = "EUID"
+const IDENTIFIER_TYPE_VAT IdentifierType = "VAT"
+const IDENTIFIER_TYPE_CRN IdentifierType = "CRN"
+const IDENTIFIER_TYPE_PNR IdentifierType = "PNR"
+const IDENTIFIER_TYPE_NIN IdentifierType = "NIN"
+const IDENTIFIER_TYPE_KSVID IdentifierType = "KSVID"
