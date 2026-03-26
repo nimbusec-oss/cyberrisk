@@ -78,6 +78,7 @@ type RatingCRR struct {
 	AssessmentValidUntil *time.Time `json:"assessmentValidUntil,omitempty"`
 	CyberTrustLabel      string     `json:"cyberTrustLabel,omitempty"`
 	ProvidedBy           ProvidedBy `json:"providedBy,omitempty"`
+	DeclineNote          *string    `json:"declineNote,omitempty"`
 }
 
 type RatingDPR struct {
@@ -88,6 +89,7 @@ type RatingDPR struct {
 	ValidUntil             *time.Time `json:"validUntil,omitempty"`
 	AssessmentValidUntil   *time.Time `json:"assessmentValidUntil,omitempty"`
 	ProvidedBy             ProvidedBy `json:"providedBy,omitempty"`
+	DeclineNote            *string    `json:"declineNote,omitempty"`
 }
 
 type WebRisk struct {
